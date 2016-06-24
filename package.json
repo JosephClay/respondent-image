@@ -1,0 +1,20 @@
+{
+  "name": "respondent-image",
+  "version": "0.0.1",
+  "description": "responsive image tags and background images",
+  "main": "index.js",
+  "directories": {},
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "author": "Joseph Clay",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
