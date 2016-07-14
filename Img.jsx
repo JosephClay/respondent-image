@@ -1,5 +1,15 @@
 const React = require('react');
 const respondent = require('./index');
+const path = require('path');
+
+const formatSrcset = (image, sizes) => {
+	const ext = path.extname(image);
+	const basename = path.basename(image, ext);
+	const dirname = path.dirname(image);
+
+	return sizes.map(size => path.resolve(dirname, `${basename}-${size}${ext} ${size}w`))
+		.join(', ');
+};
 
 module.exports = React.createClass({
 	componentDidMount() {
@@ -15,15 +25,16 @@ module.exports = React.createClass({
 		const {
 			src,
 			srcset,
+			sizes,
 			className = ''
 		} =  this.props;
 		return (
 			<img
 				className={ className }
 				src={ src }
-				data-srcset={ srcset }
+				data-srcset={ Array.isArray(sizes) ? formatSrcset(src, sizes) : srcset }
 				ref="img"
-				srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+				srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 			/>
 		);
 	}

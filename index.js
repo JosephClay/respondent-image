@@ -2,8 +2,8 @@ const img = require('./src/img');
 const bg = require('./src/bg');
 const webp = require('./src/webp');
 const once = require('./src/util/once');
-const isString = require('./util/isString');
-const flatten = require('./util/flatten');
+const isString = require('./src/util/isString');
+const flatten = require('./src/util/flatten');
 const qsa = document.querySelectorAll;
 
 let hasChanged = true;
