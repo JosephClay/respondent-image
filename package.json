@@ -1,6 +1,6 @@
 {
   "name": "respondent-image",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "responsive image tags and background images",
   "main": "index.js",
   "directories": {},
