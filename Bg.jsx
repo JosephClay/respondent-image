@@ -26,12 +26,12 @@ module.exports = React.createClass({
 			bg,
 			srcset,
 			sizes,
-			className = ''
+			...other
 		} = this.props;
 
 		return (
 			<div
-				className={ className }
+				{...other}
 				data-srcset={ Array.isArray(sizes) ? formatSrcset(bg, sizes) : srcset }
 				data-bg={ bg }
 				ref="elem"

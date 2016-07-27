@@ -62,6 +62,9 @@ $('div').respondentBg();
 
 As a React component:
 
+NOTE: uses Object Rest Spread proposal, following [React's recommendations](https://facebook.github.io/react/docs/transferring-props.html).
+The babel plugin [transform-object-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/) will be needed.
+
 ```jsx
 const Img = require('respondent-image/Img.jsx');
 const render = function() {
